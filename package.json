@@ -1,0 +1,11 @@
+{
+  "name": "patang",
+  "version": "1.0.0",
+  "description": "Extract product details based on e-commerce platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarique Ejaz",
+  "license": "ISC"
+}
