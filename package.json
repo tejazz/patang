@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Extract product details based on e-commerce platform",
   "main": "index.js",
+  "homepage": "https://www.npmjs.com/package/patang",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/tejazz/patang"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
