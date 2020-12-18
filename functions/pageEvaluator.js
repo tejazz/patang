@@ -1,21 +1,11 @@
-const { Flipkart, Amazon, Myntra } = require('../constants/productParams');
+const { determinePlatform } = require('../utils/platforms');
 
 /*
     @page: Puppeteer page object
     @platform: One e-commerce platform [flipkart, amazon, myntra]
 */
 async function evaluateProductDetails(page, platform) {
-    let platformParams = {};
-    switch (platform) {
-        case 'flipkart': platformParams = Flipkart;
-            break;
-        case 'amazon': platformParams = Amazon;
-            break;
-        case 'myntra': platformParams = Myntra;
-            break;
-        default: platformParams = Flipkart;
-            break;
-    };
+    let platformParams = determinePlatform(platform);
 
     return await page.evaluate((platform) => {
         let product = {
@@ -26,8 +16,8 @@ async function evaluateProductDetails(page, platform) {
         };
 
         // run through properties for the platform
-        Object.keys(platform).map((key) => {
-            platform[key].map((attribute) => {
+        Object.keys(platformParams).map((key) => {
+            platformParams[key].map((attribute) => {
                 let evaluatedValue = key === 'productImage' ? document.querySelector(attribute).currentSrc : document.querySelector(attribute).innerText;
 
                 if (evaluatedValue && evaluatedValue !== 'unknown') {
