@@ -7,15 +7,15 @@ const jsdom = require('jsdom');
 */
 function evaluateProductDetails(dom, platform) {
     let platformParams = determinePlatform(platform);
-
     let product = {
         title: '',
         description: '',
         price: '',
         productImage: '',
     };
-
     let htmlDOM = new jsdom.JSDOM(dom);
+
+    if (!htmlDOM || !platformParams) return null;
 
     Object.keys(platformParams).map((key) => {
         platformParams[key].map((attribute) => {
