@@ -22,7 +22,7 @@ async function extractDetailsFromPage() {
     const page = await browser.newPage();
     await page.goto(exampleUrl, { waitUntil: 'networkidle0' });
 
-    let result = evaluateProductDetails(page, 'flipkart');
+    let result = await evaluateProductDetails(page, 'flipkart');
 
     await page.close();
     await browser.close();

@@ -5,7 +5,7 @@ const determinePlatform = (platform) => {
         case 'flipkart': return Flipkart;
         case 'amazon': return Amazon;
         case 'myntra': return Myntra;
-        default: return Flipkart;
+        default: return null;
     };
 };
 
