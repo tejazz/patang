@@ -7,7 +7,7 @@ const { determinePlatform } = require('../utils/platforms');
 async function evaluateProductDetails(page, platform) {
     let platformParams = determinePlatform(platform);
 
-    return await page.evaluate((platform) => {
+    return await page.evaluate((platformParams) => {
         let product = {
             title: '',
             description: '',
