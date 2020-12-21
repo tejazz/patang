@@ -8,7 +8,7 @@ async function evaluateProductDetails(page, platform) {
     let platformParams = determinePlatform(platform);
 
     if (!page || !platformParams) return null;
-
+    
     return await page.evaluate((platformParams) => {
         let product = {
             title: '',
@@ -20,7 +20,11 @@ async function evaluateProductDetails(page, platform) {
         // run through properties for the platform
         Object.keys(platformParams).map((key) => {
             platformParams[key].map((attribute) => {
-                let evaluatedValue = key === 'productImage' ? document.querySelector(attribute).currentSrc : document.querySelector(attribute).innerText;
+                let evaluatedValue = key === 'productImage'
+                    ? document.querySelector(attribute).currentSrc
+                    : (document.querySelector(attribute)
+                        ? document.querySelector(attribute).innerText
+                        : null);
 
                 if (evaluatedValue && evaluatedValue !== 'unknown') {
                     product[key] = evaluatedValue;
