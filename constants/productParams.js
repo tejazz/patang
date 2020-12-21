@@ -5,9 +5,19 @@ const Flipkart = {
     productImage: ['._396cs4._2amPTt._3qGmMb._3exPp9'],
 };
 
-const Amazon  = {};
+const Amazon  = {
+    title: ['#productTitle'],
+    description: ['#productDescription > p'],
+    price: ['#priceblock_dealprice', '#priceblock_ourprice'],
+    productImage: ['#landingImage'],
+};
 
-const Myntra = {};
+const Myntra = {
+    title: [],
+    description: [],
+    price: [],
+    productImage: [],
+};
 
 module.exports = {
     Flipkart,
