@@ -1,6 +1,6 @@
 {
   "name": "patang",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Extract product details based on e-commerce platform",
   "main": "index.js",
   "homepage": "https://www.npmjs.com/package/patang",
