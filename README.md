@@ -91,3 +91,4 @@ extractDetailsFromPage()
 [MIT](https://github.com/tejazz/patang/blob/main/LICENSE)
 
 ### Contributions - Guidelines
+The project is open to one and all for contributions. Simply fork the project, make your changes and raise a PR. 
