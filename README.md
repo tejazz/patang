@@ -86,6 +86,51 @@ extractDetailsFromPage()
 
 ### API
 
+##### `domEvaluator`: Function
+`evaluateProductDetails(dom: string, platform: string)`: Function
+- `platform`: Values: `'flipkart' | 'amazon'`
+- `dom`: Values: `'<html>....</html>'`
+- Return Value: `Product Details Object`
+e.g:
+``` javascript
+{ 
+    title: 'boAt Stone Grenade 5 W Portable Bluetooth  Speaker<!-- -->&nbsp;&nbsp;(Charcoal Black, Mono Channel)',
+    description: '<p>Listen to music in stellar quality with this boAt speaker. With a multitude of features, such as 7-hours of playback time, water-resistant, and easy access control, this speaker ensures a fulfilling aural experience.<br></p>',
+    price: '₹1,499',
+    productImage: 'http://rukmini1.flixcart.com/image/128/128/k0vbgy80pkrrdj/speaker/mobile-tablet-speaker/4/n/n/boat-stone-grenade-original-imafg96ffpnpgdv4.jpeg?q=70' 
+}
+```
+
+##### `pageEvaluator`: Function
+`evaluateProductDetails(page: object, platform: string)`: Function
+- `platform`: Values: `'flipkart' | 'amazon'`
+- `page`: Values: `[Puppeteer Page Object](https://pptr.dev/#?product=Puppeteer&version=v5.4.1&show=api-class-page)`
+- Return Value: `Product Details Object`
+e.g:
+``` javascript
+{ 
+    title: 'boAt Stone Grenade 5 W Portable Bluetooth  Speaker<!-- -->&nbsp;&nbsp;(Charcoal Black, Mono Channel)',
+    description: '<p>Listen to music in stellar quality with this boAt speaker. With a multitude of features, such as 7-hours of playback time, water-resistant, and easy access control, this speaker ensures a fulfilling aural experience.<br></p>',
+    price: '₹1,499',
+    productImage: 'http://rukmini1.flixcart.com/image/128/128/k0vbgy80pkrrdj/speaker/mobile-tablet-speaker/4/n/n/boat-stone-grenade-original-imafg96ffpnpgdv4.jpeg?q=70' 
+}
+```  
+
+##### `platformIdentifiers`: Object
+- Returns the attributes object for a particular platform
+- Example:
+``` javascript
+const { platformIdentifiers } = require('patang');
+
+console.log(platformIdentifiers.Flipkart); 
+// Output
+// {
+//     title: ['.B_NuCI'],
+//     description: ['div._1mXcCf'],
+//     price: ['._30jeq3._16Jk6d'],
+//     productImage: ['._396cs4._2amPTt._3qGmMb._3exPp9'],
+// }
+```
 
 ### License
 [MIT](https://github.com/tejazz/patang/blob/main/LICENSE)
