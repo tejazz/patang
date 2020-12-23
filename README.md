@@ -2,7 +2,7 @@
 Easy plug-in module for extracting product details for e-commerce websites like Flipkart and Amazon in an easy-to-read JSON format. It extends two implementations - with __Puppeteer__ and __DOM String__.
 
 ### Who Should Use This?
-This module would come in handy if one is building for some kind of a __scraping operation__ and needs to evaluate product details. It takes care of the logic for extracting product details for supported platforms. 
+This module would come in handy if one is building for some kind of a __scraping operation__ and needs to evaluate product details. It takes care of the logic for extracting product details. 
 
 ### Supported Platforms
 - [Flipkart](https://www.flipkart.com)
@@ -13,7 +13,7 @@ Install the package in your Node.js application
 ```
 npm i --save patang
 ```
-You can go ahead and require it wherever you need to use it,
+You can go ahead and require it wherever you need to use it.
 ``` javascript
 // sample file: ./index.js
 const patang = require('patang');
@@ -22,7 +22,7 @@ const patang = require('patang');
 ### Usages - Examples
 There are two ways to utilize the library
 #### __With Puppeteer__
-The `evaluateProductDetails` function of the `domEvaluator` module expects the platform name and the puppeteer page object to be made available.
+The `evaluateProductDetails` function of the `domEvaluator` module expects the `platform name` and the `puppeteer page object` to be made available.
 ```javascript
 const axios = require('axios');
 const { domEvaluator } = require('patang');
@@ -40,7 +40,7 @@ axios.get(exampleFlpktUrl)
 ```
 
 #### __With DOM String__
-The `evaluateProductDetails` function of the `pageEvaluator` module expects the HTML DOM string and one of the supported platform name as parameter.
+The `evaluateProductDetails` function of the `pageEvaluator` module expects the `HTML DOM string` and one of the `supported platform name` as parameter.
 
 ``` javascript
 const puppeteer = require('puppeteer');
