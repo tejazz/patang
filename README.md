@@ -21,8 +21,10 @@ const patang = require('patang');
 
 ### Usages - Examples
 There are two ways to utilize the library
-#### __With Puppeteer__
-The `evaluateProductDetails` function of the `domEvaluator` module expects the `platform name` and the `puppeteer page object` to be made available.
+
+#### __With DOM String__
+The `evaluateProductDetails` function of the `pageEvaluator` module expects the `HTML DOM string` and one of the `supported platform name` as parameter.
+
 ```javascript
 const axios = require('axios');
 const { domEvaluator } = require('patang');
@@ -39,8 +41,8 @@ axios.get(exampleFlpktUrl)
     });
 ```
 
-#### __With DOM String__
-The `evaluateProductDetails` function of the `pageEvaluator` module expects the `HTML DOM string` and one of the `supported platform name` as parameter.
+#### __With Puppeteer__
+The `evaluateProductDetails` function of the `domEvaluator` module expects the `platform name` and the `puppeteer page object` to be made available.
 
 ``` javascript
 const puppeteer = require('puppeteer');
