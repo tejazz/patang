@@ -39,7 +39,7 @@ function evaluateImageUrl(dom, platform, attribute) {
 
     switch (platform) {
         case 'flipkart': return JSON.parse(dom.window.document.getElementById("jsonLD") ? dom.window.document.getElementById("jsonLD").innerHTML : [{ image: '' }])[0].image;
-        case 'amazon': return dom.window.document.querySelector(attribute).getAttribute('data-old-hires');
+        case 'amazon': return dom.window.document.querySelector(attribute) ? dom.window.document.querySelector(attribute).getAttribute('data-old-hires') : '';
         case 'myntra': return '';
         default: return '';
     }
